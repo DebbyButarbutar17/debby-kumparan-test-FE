@@ -34,7 +34,7 @@ export class PageDetailAlbum extends Component {
 
       return (
         <div>
-            <div style={{color: 'blue'}}></div>
+            <div style={{color: 'blue'}}>Detail Album</div>
             <div>
               <div className="col-md-6" > 
                 <div>
