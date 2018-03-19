@@ -38,35 +38,46 @@ export class PagePost extends Component {
       } = this.props
 
       return (
-        <div>
-              <div style={{color: 'blue'}}>List Posts</div>
-              <div>
-                <BootstrapTable data={posts} striped hover width="100">
-                    <TableHeaderColumn
-                        dataField="id"
-                        isKey
-                        width="100"
-                    >
-                    No
-                    </TableHeaderColumn>
-                    <TableHeaderColumn
-                        dataField="title"
-                        width="100"
-                        dataFormat={PagePost.detailPost}
-                    >
-                    Title
-                    </TableHeaderColumn>
-                    <TableHeaderColumn
-                        dataField="body"
-                        width="100"
-                    >
-                    Body
-                    </TableHeaderColumn>
-                    
-                  </BootstrapTable>
-              </div>
-        </div>
-         
+         <BootstrapTable data={posts} striped hover width="100">
+          <TableHeaderColumn
+              dataField="id"
+              isKey
+              width="100"
+          >
+          No
+          </TableHeaderColumn>
+          <TableHeaderColumn
+              dataField="title"
+              dataFormat={PagePost.detailPost}
+              width="100"
+          >
+          Title
+        </TableHeaderColumn>
+        <TableHeaderColumn
+             dataField="id"
+             width="200"
+              dataFormat={(cell, items) => (
+                    <div>
+                      <Link
+                        className="btn-primary"
+                        to={`/posts/edit/` +items.id}
+                      >
+                        Edit
+                      </Link>
+                      <Link
+                        className="btn-primary"
+                       to={`/posts/delete/` +items.id}
+                      >
+                        Delete
+                      </Link>
+                    </div>
+                  )}
+
+          >
+          Action
+          </TableHeaderColumn>
+          
+        </BootstrapTable>
         
       )
 

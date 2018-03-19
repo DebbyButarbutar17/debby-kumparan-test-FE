@@ -30,54 +30,58 @@ export class PageDetailPost extends Component {
           list_comment
       } = this.props
 
+      console.log('detail ', detail_post)
+
       return (
         <div>
             <div style={{color: 'blue'}}>Detail Post</div>
+
             <div className="col-md-6"> 
-            <div>
-              <div style={{ width: 800 }}>Title :
-                {detail_post.title}
+              <div>
+                <div style={{ width: 800 }}>Title :
+                  {detail_post.title}
+                </div>
+              </div>
+              <div>
+                <div style={{ width: 800 }}>Description :   
+                  { detail_post.body}
+                </div>
               </div>
             </div>
+
             <div>
-              <div style={{ width: 800 }}>Description :   
-              { detail_post.body}</div>
+              <BootstrapTable data={list_comment} striped hover width="100">
+                 <TableHeaderColumn
+                      dataField="id"
+                    isKey
+                    width="100"
+                >
+                No
+                </TableHeaderColumn>
+                <TableHeaderColumn
+                    dataField="name"
+                    width="100"
+                >
+                Name
+                </TableHeaderColumn>
+                 <TableHeaderColumn
+                    dataField="email"
+                    width="100"
+                >
+                Email
+                </TableHeaderColumn>
+                <TableHeaderColumn
+                    dataField="body"
+                    width="100"
+                >
+                Body
+                </TableHeaderColumn>
+              </BootstrapTable>
+              
             </div>
-          </div>
       </div>
         
-        /*<BootstrapTable data={detail_post} striped hover width="100">
-          <TableHeaderColumn
-              dataField="id"
-              isKey
-              width="100"
-          >
-          No
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="title"
-              dataFormat={(cell, items) => (
-                <div>
-                      <Link
-                        className="btn-primary"
-                        to={`/posts/`+items.id}
-                      >
-                        
-                      </Link>
-                </div>
-              )}
-          >
-          Title
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="body"
-              width="100"
-          >
-          Body
-          </TableHeaderColumn>
-          
-        </BootstrapTable>*/
-        
+               
       )
 
   }
