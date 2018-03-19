@@ -31,17 +31,21 @@ export class PageDetailPost extends Component {
       } = this.props
 
       return (
-        <div className="col-md-6"> 
-          <div>
-            <div style={{ width: 800 }}>Title :
-              {detail_post.title}
+        <div>
+            <div style={{color: 'blue'}}>Detail Post</div>
+            <div className="col-md-6"> 
+            <div>
+              <div style={{ width: 800 }}>Title :
+                {detail_post.title}
+              </div>
+            </div>
+            <div>
+              <div style={{ width: 800 }}>Description :   
+              { detail_post.body}</div>
             </div>
           </div>
-          <div>
-            <div style={{ width: 800 }}>Description :   
-            { detail_post.body}</div>
-          </div>
-        </div>
+      </div>
+        
         /*<BootstrapTable data={detail_post} striped hover width="100">
           <TableHeaderColumn
               dataField="id"

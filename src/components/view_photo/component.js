@@ -33,17 +33,21 @@ export class PageDetailPhoto extends Component {
 
       return (
         <div>
-          <div className="col-md-6" > 
+            <div style={{color: 'blue'}}>Detail Photo</div>
             <div>
-              <div style={{ width: 800 }}>Title :
-                {detail_photo.title}
+              <div className="col-md-6" > 
+                <div>
+                  <div style={{ width: 800 }}>Title :
+                    {detail_photo.title}
+                  </div>
+                </div>
+                <div>
+                  <Image src={detail_photo.url} width="250" heigth="250" style={{ margin: 5 }}></Image>
+                </div>
               </div>
             </div>
-            <div>
-              <Image src={detail_photo.url} width="250" heigth="250" style={{ margin: 5 }}></Image>
-            </div>
-          </div>
-        </div>
+      </div>
+        
         
       )
 

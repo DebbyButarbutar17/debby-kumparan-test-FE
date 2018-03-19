@@ -53,6 +53,8 @@ export class PagePhotos extends Component {
         //<div>{albums.title}</div> 
         
         <div>
+          <div style={{color: 'blue'}}>List Photos of the Albums</div>
+
           {photos.map((item, idx) =>
             <div key={idx}>
               <Link to={`/photos/`+item.id} style={{ color: 'blue' }}>

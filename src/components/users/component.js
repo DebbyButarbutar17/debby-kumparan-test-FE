@@ -52,69 +52,73 @@ export class PageUser extends Component {
     );
     return (
       <div>
-        {console.log('lol',users[0])}
-        <BootstrapTable data={users} striped hover width="100">
-          <TableHeaderColumn
-              dataField="id"
-              isKey
-              width="100"
-          >
-          UserID
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="name"
-              width="200"
-          >
-          User
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="username"
-              width="200"
-          >
-          Username
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="phone"
-              width="200"
-          >
-          Phone
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="website"
-              width="200"
-          >
-          Website
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="email"
-              width="200"
-          >
-          Email
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="id"
-              dataFormat={(cell, items) => (
-                    <div>
-                      <Link
-                        className="btn-primary"
-                        to={`/posts?userid=`+items.id}
-                      >
-                        View Posts
-                      </Link>
-                      <Link
-                        className="btn-primary"
-                        to={`/albums?userId=` +items.id}
-                      >
-                        View Album
-                      </Link>
-                    </div>
-                  )}
+        <div style={{color: 'blue'}}>List Users</div>
+        <div>
+          {console.log('lol',users[0])}
+          <BootstrapTable data={users} striped hover width="100">
+            <TableHeaderColumn
+                dataField="id"
+                isKey
+                width="100"
+            >
+            UserID
+            </TableHeaderColumn>
+            <TableHeaderColumn
+                dataField="name"
+                width="200"
+            >
+            User
+            </TableHeaderColumn>
+            <TableHeaderColumn
+                dataField="username"
+                width="200"
+            >
+            Username
+            </TableHeaderColumn>
+            <TableHeaderColumn
+                dataField="phone"
+                width="200"
+            >
+            Phone
+            </TableHeaderColumn>
+            <TableHeaderColumn
+                dataField="website"
+                width="200"
+            >
+            Website
+            </TableHeaderColumn>
+            <TableHeaderColumn
+                dataField="email"
+                width="200"
+            >
+            Email
+            </TableHeaderColumn>
+            <TableHeaderColumn
+                dataField="id"
+                dataFormat={(cell, items) => (
+                      <div>
+                        <Link
+                          className="btn-primary"
+                          to={`/posts?userid=`+items.id}
+                        >
+                          View Posts
+                        </Link>
+                        <Link
+                          className="btn-primary"
+                          to={`/albums?userId=` +items.id}
+                        >
+                          View Album
+                        </Link>
+                      </div>
+                    )}
 
-          >
-          Action
-          </TableHeaderColumn>
-        </BootstrapTable>
+            >
+            Action
+            </TableHeaderColumn>
+          </BootstrapTable>
+        </div>
       </div>
+      
     );
   }
 }

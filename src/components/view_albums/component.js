@@ -33,17 +33,22 @@ export class PageDetailAlbum extends Component {
       } = this.props
 
       return (
-        // <div>testalbum</div>
-         <div className="col-md-6" > 
-           <div>
-            <label>Detail Foto</label>
-          </div>
-          <div>
-            <div style={{ width: 800 }}>Title :
-              {detail_album.title}
+        <div>
+            <div style={{color: 'blue'}}></div>
+            <div>
+              <div className="col-md-6" > 
+                <div>
+                  <label>Detail Foto</label>
+                </div>
+                <div>
+                  <div style={{ width: 800 }}>Title :
+                    {detail_album.title}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
+         
         
       )
 

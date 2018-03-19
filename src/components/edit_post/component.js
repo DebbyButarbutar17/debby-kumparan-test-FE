@@ -107,25 +107,29 @@ export class PageEditPost extends Component {
 
       return (
         <div>
-          <Form onSubmit={this.onSubmit}>
-            <label>
-              Title:
-              <input
-                type="text"
-                value={this.state.data.title}
-                onChange={e => this.onChange(setTarget('title', e.target.value), 'data')}
-              />
-            </label><br/>
-            <label>
-              Deskripsi:
-              <input type="text"
-                value={this.state.data.body}
-                onChange={e => this.onChange(setTarget('body', e.target.value), 'data')}
-              />
-            </label>
-            <input type="submit"/>
-          </Form>
+              <div style={{color: 'blue'}}>Edit Post</div>
+              <div>
+                <Form onSubmit={this.onSubmit}>
+                  <label>
+                    Title:
+                    <input
+                      type="text"
+                      value={this.state.data.title}
+                      onChange={e => this.onChange(setTarget('title', e.target.value), 'data')}
+                    />
+                  </label><br/>
+                  <label>
+                    Deskripsi:
+                    <input type="text"
+                      value={this.state.data.body}
+                      onChange={e => this.onChange(setTarget('body', e.target.value), 'data')}
+                    />
+                  </label>
+                  <input type="submit"/>
+                </Form>
+              </div>
         </div>
+        
       )
   }
 }

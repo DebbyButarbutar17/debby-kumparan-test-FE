@@ -38,29 +38,35 @@ export class PagePost extends Component {
       } = this.props
 
       return (
-         <BootstrapTable data={posts} striped hover width="100">
-          <TableHeaderColumn
-              dataField="id"
-              dataFormat={PagePost.detailPost}
-              isKey
-              width="100"
-          >
-          No
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="title"
-              width="100"
-          >
-          Title
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="body"
-              width="100"
-          >
-          Body
-          </TableHeaderColumn>
-          
-        </BootstrapTable>
+        <div>
+              <div style={{color: 'blue'}}>List Posts</div>
+              <div>
+                <BootstrapTable data={posts} striped hover width="100">
+                    <TableHeaderColumn
+                        dataField="id"
+                        isKey
+                        width="100"
+                    >
+                    No
+                    </TableHeaderColumn>
+                    <TableHeaderColumn
+                        dataField="title"
+                        width="100"
+                        dataFormat={PagePost.detailPost}
+                    >
+                    Title
+                    </TableHeaderColumn>
+                    <TableHeaderColumn
+                        dataField="body"
+                        width="100"
+                    >
+                    Body
+                    </TableHeaderColumn>
+                    
+                  </BootstrapTable>
+              </div>
+        </div>
+         
         
       )
 

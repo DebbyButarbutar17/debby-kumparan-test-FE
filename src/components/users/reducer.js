@@ -10,7 +10,7 @@ export const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         users: action.users,
       });
-      console.log('users', initialState.users);
+      // console.log('users', initialState.users);
     }
     default: {
       return state;

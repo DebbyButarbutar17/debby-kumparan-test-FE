@@ -43,25 +43,29 @@ export class PageAlbums extends Component {
       } = this.props
 
       return (
-        //<div>{albums.title}</div> 
-        // <div>hello</div>
-        <BootstrapTable data={albums} striped hover width="100">
-          <TableHeaderColumn
-              dataField="id"
-              dataFormat={PageAlbums.detailAlbums}
-              isKey
-              width="100"
-          >
-          No
-          </TableHeaderColumn>
-          <TableHeaderColumn
-              dataField="title"
-              width="100"
-          >
-          Title
-          </TableHeaderColumn>
-          
-        </BootstrapTable>
+        <div>
+              <div style={{color: 'blue'}}>List Albums</div>
+              <div>
+                <BootstrapTable data={albums} striped hover width="100">
+                  <TableHeaderColumn
+                      dataField="id"                      
+                      isKey
+                      width="100"
+                  >
+                  No
+                  </TableHeaderColumn>
+                  <TableHeaderColumn
+                      dataField="title"
+                      dataFormat={PageAlbums.detailAlbums}
+                      width="100"
+                  >
+                  Title
+                  </TableHeaderColumn>
+                  
+                </BootstrapTable>
+            </div>
+        </div>
+        
       )
 
   }
