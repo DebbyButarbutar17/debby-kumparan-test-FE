@@ -14,6 +14,10 @@ import { PageUserWrapper } from '../users';
 import { PagePostWrapper } from '../posts';
 import { PageAlbumsWrapper } from '../albums';
 import { PageDetailPostWrapper } from '../view_posts';
+import { PageDetailAlbumWrapper } from '../view_albums';
+import { PageEditPostWrapper } from '../edit_post';
+import { PagePhotosWrapper } from '../photos';
+import { PageDetailPhotoWrapper } from '../view_photo';
 const history = syncHistoryWithStore(browserHistory, store);
 
 
@@ -29,12 +33,24 @@ export const AppRoute = () => (
         component={PagePostWrapper}
       />
       <Route
-        path="/albums/:id"
+        path="/albums"
         component={PageAlbumsWrapper}
       />
       <Route
         path="/posts/:id"
         component={PageDetailPostWrapper}
+      />
+      <Route
+        path="/photos/:id"
+        component={PageDetailPhotoWrapper}
+      />
+      <Route
+        path="/posts/edit/:id"
+        component={PageEditPostWrapper}
+      />
+      <Route
+        path="/photos"
+        component={PagePhotosWrapper}
       />
     </Router>
   </Provider>

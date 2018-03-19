@@ -15,10 +15,24 @@ export class PageAlbums extends Component {
       data : []
     };
   }
+
+  static detailAlbums(cell, item) {
+    console.log('item', item);
+    return (
+      <Link to={`/photos?albumId=${item.id}`} style={{ color: 'blue' }}>
+        {cell || '-'}
+      </Link>
+    );
+  }
+
   componentWillMount() {
     //   console.log(this.props.routeParams.id);
-    if (this.props.routeParams.id){ 
-      this.props.fetchUserAlbumsList(this.props.routeParams.id);
+    // if (this.props.routeParams.id){ 
+    //   this.props.fetchUserAlbumsList(this.props.routeParams.id);
+    // }
+    console.log(this.props.router.location.query.userId);
+    if (this.props.router.location.query.userId){ 
+      this.props.fetchUserAlbumsList(this.props.router.location.query.userId);
     }
   }
 
@@ -29,8 +43,25 @@ export class PageAlbums extends Component {
       } = this.props
 
       return (
-        <div>{albums.title}</div> 
+        //<div>{albums.title}</div> 
         // <div>hello</div>
+        <BootstrapTable data={albums} striped hover width="100">
+          <TableHeaderColumn
+              dataField="id"
+              dataFormat={PageAlbums.detailAlbums}
+              isKey
+              width="100"
+          >
+          No
+          </TableHeaderColumn>
+          <TableHeaderColumn
+              dataField="title"
+              width="100"
+          >
+          Title
+          </TableHeaderColumn>
+          
+        </BootstrapTable>
       )
 
   }

@@ -1,23 +1,15 @@
 import { ActionTypes } from '../../store/action-types';
 
 const initialState = {
-  detail_post: {},
-  list_comment: []
+  photos: [],
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.PAGE_DETAIL_POST: {
+    case ActionTypes.PAGE_LIST_PHOTOS: {
       return Object.assign({}, state, {
-        detail_post: action.detail_post,
+        photos: action.photos,
       });
-      
-    }
-    case ActionTypes.PAGE_LIST_COMMENT: {
-      return Object.assign({}, state, {
-        list_comment: action.list_comment,
-      });
-      
     }
     default: {
       return state;

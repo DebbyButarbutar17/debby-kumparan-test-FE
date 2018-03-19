@@ -6,7 +6,7 @@ export const setListAlbums = data => ({
 });
 
 export const fetchUserAlbumsList = (id) => (dispatch) => {
-  fetch('https://jsonplaceholder.typicode.com/albums/' + id)
+  fetch('https://jsonplaceholder.typicode.com/albums?userId=' + id)
     .then(result => {
       return result.json();
     }). then(data => {

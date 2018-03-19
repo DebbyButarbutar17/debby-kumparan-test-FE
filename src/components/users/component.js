@@ -103,7 +103,7 @@ export class PageUser extends Component {
                       </Link>
                       <Link
                         className="btn-primary"
-                        to={`/albums/${items.id}`}
+                        to={`/albums?userId=` +items.id}
                       >
                         View Album
                       </Link>

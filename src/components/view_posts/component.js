@@ -16,21 +16,33 @@ export class PageDetailPost extends Component {
     };
   }
   componentWillMount() {
-      console.log(this.props.router.location.query.userid);
-    // if (this.props.router.location.query.userid){ 
-    //   this.props.fetchUserPostList(this.props.router.location.query.userid);
-    // }
+      console.log(this.props.routeParams.id);
+    if (this.props.routeParams.id){ 
+      this.props.fetchDetailPost(this.props.routeParams.id);
+      this.props.fetchListComment(this.props.routeParams.id);
+    }
   }
 
   
   render() {
       const{
-          posts
+          detail_post,
+          list_comment
       } = this.props
 
       return (
-        <div>test123</div>
-         /*<BootstrapTable data={posts} striped hover width="100">
+        <div className="col-md-6"> 
+          <div>
+            <div style={{ width: 800 }}>Title :
+              {detail_post.title}
+            </div>
+          </div>
+          <div>
+            <div style={{ width: 800 }}>Description :   
+            { detail_post.body}</div>
+          </div>
+        </div>
+        /*<BootstrapTable data={detail_post} striped hover width="100">
           <TableHeaderColumn
               dataField="id"
               isKey
@@ -70,11 +82,13 @@ export class PageDetailPost extends Component {
 PageDetailPost.propTypes = {
   //  fetchUserPostList: PropTypes.func,
   fetchDetailPost: PropTypes.func,
+  fetchListComment: PropTypes.func
 };
 
 PageDetailPost.defaultProps = {
  //   fetchUserPostList: () => { }
   fetchDetailPost: () => { },
+  fetchListComment: () => { }
 };
 
 export default PageDetailPost;
